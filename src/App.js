@@ -46,7 +46,7 @@ function App() {
         <Container className='p-5'>
           <ToastContainer position='bottom-center' />
           <Row>
-            <Col md={6} className='offset-md-3'>
+            <Col className=''>
               <div className='grid'>
                 {/* using map feature to loop through the item Array */}
                 {itemArray.map((item, index) => (
