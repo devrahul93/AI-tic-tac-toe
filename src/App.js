@@ -1,23 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Icon from './components/Icon'
+
+// import react toastify
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 import Tilty from 'react-tilty'
+
+import { Card, CardBody, Container, Button, Col, Row } from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import './App.css'
 
+// Create nine empty default array that can be filled with cross or circle
+const itemArray = new Array(9).fill('empty')
+
+const reloadGame = () => {
+  //
+}
+
+const checkIsWinner = () => {
+  //
+}
+
+const changeItem = (itemNumber) => {
+  //
+}
+
 function App() {
+  //boolian checker to check whether that is cross or check there
+  const [isCross, setIsCross] = useState(false)
+  //to check who is the winner
+  const [winMessags, setWinMessage] = useState('')
+
   return (
     <div className='App'>
       <Tilty
         className='Tilt'
-        options={{ max: 25 }}
-        style={{ height: 250, width: 250 }}
-        speed={400}
+        options={{}}
+        style={{}}
+        speed={300}
         glare={true}
-        max-glare={1}
+        max-glare={2}
       >
-        <div className='container'>
-          <div className='card'>
-            <h1>Hello World</h1>
-          </div>
-        </div>
+        <Container className='p-5'>
+          <ToastContainer position='bottom-center' />
+          <Row>
+            <Col md={6} className='offset-md-3'>
+              <div className='grid'>
+                {/* using map feature to loop through the item Array */}
+                {itemArray.map((item, index) => (
+                  <Card>
+                    <CardBody className='box'>
+                      <Icon name={item} />
+                    </CardBody>
+                  </Card>
+                ))}
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </Tilty>
     </div>
   )

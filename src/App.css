@@ -1,13 +1,26 @@
 body {
   background: linear-gradient(to top, #3c006b, #9948d9);
-  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.box {
+  width: auto;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.container {
-  width: fit-content;
-  border-radius: 10px;
+.icon {
+  font-size: 35px;
+  color: #0a0808;
 }
